@@ -1,0 +1,24 @@
+\subsection{EasyWSDL \& EasySAWSDL}\label{2-fundamentacao-ferramentas-easywsdl}
+
+EasyWSDL~\cite{EasyWSDL-2016} é uma biblioteca Java para suporte à leitura, à edição e à criação de documentos WSDL e XML Schema (XSD). EasyWSDL foi desenvolvida pelo \textit{OW2 Consortium}~\cite{OW2-2016-Site}, organização da comunidade \textit{open-source}, que tem como missão promover o desenvolvimento de aplicações \textit{middleware} e de negócio, plataformas de computação em nuvem, entre outras.
+
+A arquitetura de EasyWSDL é extensível. Assim, a extensão EasySAWSDL~\cite{EasySAWSDL-2016} foi proposta para permitir a anotação de documentos WSDL segundo o padrão SAWSDL~\cite{W3C-2007-SAWSDL}. EasyWSDL fornece classes e métodos específicos para a criação e a manipulação de elementos de um documento WSDL, enquanto que EasySAWSDL fornece classes e métodos específicos para a anotação semântica. A manipulação de elementos WSDL e atributos SAWSDL são abstraídos por meio da linguagem de programação. A biblioteca provê métodos claros que permitem que desenvolvedores, familiarizados com a linguagem de programação Java, possam compreender e manipular mais facilmente o documento. Neste sentido, desenvolvedores não necessitam lidar diretamente com dados sintáticos das especificações WSDL e SAWSDL para a criação de serviços web semânticos.
+
+%Por meio da arquitetura orientada a objetos da linguagem Java, EasyWSDL e sua extensão EasySAWSDL proveem um nível mais abstrato de construção e manipulação de elementos WSDL e atributos SAWSDL, dado que desenvolvedores de software normalmente estão mais familiarizados com linguagens de programação orientadas a objetos do que com os padrões WSDL e SAWSDL.
+
+A \lstlistingname~\ref{lst:easywsdl} apresenta um exemplo de utilização da biblioteca EasySAWSDL para a anotação de uma especificação WSDL. As linhas 1 e 2 contém instruções para a leitura de um documento WSDL. O objeto \texttt{reader} é utilizado para a leitura de um documento WSDL, enquanto que o objeto \texttt{desc} é utilizado para o armazenamento de um documento WSDL. A linha 3 contém uma instrução necessária para a escrita de atributos SAWSDL. A linha 4 contém uma instrução para a leitura de uma descrição WSDL (objeto \texttt{desc}) por meio do escritor SAWSDL. A linha 5 contém uma instrução para obter um elemento WSDL (objeto \texttt{ele}) dado um identificador. Finalmente, a linha 6 contém uma instrução para adicionar um atributo \textit{Model Reference}, com o uso de uma URI de um conceito de uma ontologia.
+
+%Refs da listagem:
+% https://www.overleaf.com/learn/latex/Code_listing
+% https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings
+% http://texdoc.net/texmf-dist/doc/latex/listings/listings.pdf
+\begin{lstlisting}[language=java,caption={[Exemplo de uso da biblioteca EasySAWSDL]\textbf{Exemplo de uso da biblioteca EasySAWSDL}.},label={lst:easywsdl}]
+    WSDLReader reader = WSDLFactory.newInstance().newWSDLReader();
+    Description desc = reader.read(new URL("http://grasews/svc.wsdl"));
+    SAWSDLWriter writer = SAWSDLFactory.newInstance().newSAWSDLWriter();
+    Document doc = writer.getDocument(desc);
+    Element ele = doc.getElementById("elementId");
+    ele.addModelReference(new URI("http://grasews.owl\#concept"));
+\end{lstlisting}
+
+%SAWSDLReader reader = SAWSDLFactory.newInstance().newSAWSDLReader();

@@ -1,0 +1,39 @@
+\section{\textit{Domain-Driven Design}}\label{2-fundamentacao-ddd}
+
+\textit{Domain-Driven Design} (DDD) é uma abordagem para o desenvolvimento de softwares focada em resolver requisitos complexos de desenvolvimento por meio de implementações conectadas ao redor de um núcleo~\cite{EVANS-2004-DDD}. O núcleo, também chamado de \textit{domain} ou \textit{core}, contém conceitos do domínio do negócio que ditam as regras e comportamentos de todos os componentes e camadas ao seu redor.
+
+As premissas do DDD são: i) coloque o foco principal do projeto no domínio de negócio e em sua lógica, representados pelo núcleo do projeto; ii) baseie-se em um modelo de domínio de negócio para a criação de projetos complexos; e, por fim, iii) inicie uma colaboração criativa entre especialistas técnicos e de domínio para obter a máxima aproximação possível do centro conceitual do problema~\cite{DDDCOMMUNITY-2019-DDD}.
+
+%A partir do modelo proposto pelo DDD, pode-se abstrair as camadas de software em um modelo também conhecido como arquitetura cebola~\cite{PALERMO-2008-Onion-Architecture}. Uma abstração da arquitetura cebola segundo a abordagem de desenvolvimento do DDD pode ser vista na \figurename~\ref{fig:onion-architecture}.
+
+%\begin{figure}[h]
+%    \includegraphics[scale=0.4]{4-grasews/imagens/onion-architecture.png}
+%    \centering
+%    \caption{Arquitetura cebola conforme o modelo proposto pela abordagem DDD.}
+%    \label{fig:onion-architecture}
+%\end{figure}
+
+A seguir, estão listadas as principais camadas da abordagem de desenvolvimento DDD com uma visão geral de cada camada: 
+
+\begin{enumerate}
+
+  \item
+  \textit{\textbf{Apresentação}}: A camada de apresentação é responsável por agrupar módulos que contenham interfaces de usuário (UI - \textit{User Interface}) para a solução. Os módulos desta camada podem ser implementados de diversas formas, como aplicações web, \textit{desktop}/\textit{standalone}, móveis (\textit{smart phone}, \textit{tablet}, \textit{smart TV}), aplicações \textit{console}, etc;
+  
+  \item
+  \textit{\textbf{Serviços Distribuídos}}: A camada de serviços distribuídos é responsável por agrupar módulos que contenham APIs para a solução. As APIs podem ser implementadas como serviços web, tanto usando a abordagem SOAP quanto a abordagem REST, ou como bibliotecas de desenvolvimento;
+  
+  \item
+  \textit{\textbf{Aplicação}}: A camada de aplicação é responsável por agrupar módulos que contenham funcionalidades relacionadas à lógica do negócio. O foco desta camada é orquestrar chamadas a diferentes métodos de diferentes classes a fim de resolver problemas complexos do negócio;
+  
+  \item
+  \textit{\textbf{Domínio}}: A camada de domínio é considerada o núcleo da solução. A camada de domínio segue uma estratégia de desenvolvimento orientado a interfaces. As interfaces de domínio garantem que as regras e responsabilidades sejam distribuídas de forma clara e bem definidas para as demais camadas da solução. Neste sentido, as responsabilidades entre os objetos e as camadas da solução ficam mais claras e mais bem separadas. A camada de domínio e as suas interfaces são responsáveis por ditar todas as regras e as funcionalidades que são implementadas pelas demais classes e camadas da solução.
+  
+  O desenvolvimento orientado a interfaces também contribui para uma mais fácil substituição de uma implementação por outra, como é o caso de substituição de tecnologias, linguagens de programação e bibliotecas diferentes das utilizadas na implementação original. Por exemplo, a substituição de uma camada de acesso a dados o banco de dados Oracle~\cite{ORACLE-2019} por uma nova implementação utilizando o banco de dados SQL Server~\cite{SQLSERVER-2019}. A substituição se torna mais fácil pois não é necessário se preocupar com as interações e dependências desta implementação em relação às demais camadas, visto que todos os objetos da solução estão seguindo implementações de interfaces definidas pela camada de domínio. Portanto, a substituição não gera impacto algum nas demais camadas da solução.
+  
+  Finalmente, a camada de domínio é responsável por manter todas as entidades de negócio utilizadas na solução. Estas entidades, chamadas de entidades de domínio, são o fundamento para a construção de um modelo orientado ao negócio. Por meio delas, pode-se identificar comportamentos e funcionalidades primordiais a fim de resolver problemas complexos existentes no domínio de negócio;
+  
+  \item
+  \textit{\textbf{Infraestrutura}}: A camada de infraestrutura é responsável por agrupar módulos cujo foco está na implementação de funcionalidades que são dependentes da infraestrutura e não do negócio (domínio) em si. Por exemplo, o uso do sistema gerenciador de banco de dados (SGBD) SQL Server~\cite{SQLSERVER-2019} por meio do ORM \textit{Entity Framework} (EF)~\cite{MICROSOFT-2019-Entity-Framework}. Outro exemplo seria o uso de um SGBD Oracle~\cite{ORACLE-2019} por meio do \textit{Object Relational Mapper} (ORM) Dapper~\cite{DAPPER-2019-Site}. Neste sentido, para o negócio (domínio), não importa qual SGBD ou qual ORM está sendo utilizado. Ambos são apenas componentes de infraestrutura a fim de suportar o negócio (domínio) em si.
+  
+\end{enumerate}

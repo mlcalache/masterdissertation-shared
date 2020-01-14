@@ -1,0 +1,100 @@
+\documentclass[
+12pt,        % tamanho da fonte
+openright,   % capitulos comecam em paginas impares, insere paginas em branco se necessario
+twoside,     % para impressao frente e verso, comente esta linha se for imprimir só frente.
+a4paper,     % tamanho do papel
+% -- opções da classe abntex2 -- retire o comentario para obter o comportamento
+% chapter=TITLE,         % títulos de capítulos convertidos em letras maiúsculas
+% section=TITLE,         % títulos de seções convertidos em letras maiúsculas
+% subsection=TITLE,      % títulos de subseções convertidos em letras maiúsculas
+% subsubsection=TITLE,% títulos de subsubseções convertidos em letras maiúsculas
+% -- opções do pacote polyglossia --
+% french,      % idioma adicional para hifenizacao
+% spanish,     % idioma adicional para hifenizacao
+english,       % idioma adicional para hifenizacao
+brazil,        % ultimo idioma eh o principal do documento
+%
+% ppgca.cls options
+%
+%englishwr      % For documents written in english
+]{ppgca}
+
+
+
+%%%%%%%%%%%%%%%% VERSÃO DO DOCUMENTO: ORIGINAL OU CORRIGIDA
+% Após as correções sugeridas pela banca serem efetuadas, retire os comentários
+% da próxima linha.
+% \versaodocumento{corrigida}
+ 
+% Este arquivo foi baseado no modelo disponível em https://www.ctan.org/pkg/abntex2.
+
+% Para gerar o indice, execute o comando makeindex:
+% makeindex main
+
+% O preambulo deve conter o tipo do trabalho, o objetivo, 
+% o nome da instituição e a área de concentração 
+\preambulo{Modelo canônico de trabalho monográfico acadêmico em conformidade com
+as normas ABNT.}
+
+\usepackage[utf8]{inputenc} % para quebras de linhas e de paginas (https://www.overleaf.com/learn/latex/Line_breaks_and_blank_spaces)
+\usepackage{lipsum} % para geração de dummy text
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% CUSTOMIZACOES %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{customizacoes.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%---
+% Informações de dados para CAPA e FOLHA DE ROSTO
+% ---
+\title{Suporte à Anotação Gráfica e Colaborativa de Serviços Web Semânticos}
+\author{Matheus de Lara Calache}
+\local{Ribeirão Preto--SP}
+\data{2020}
+\orientador{Prof. Dr. Cléver Ricardo Guareis de Farias}
+\coorientador{}
+\tipotrabalho{Dissertação} % Dissertação ou Tese
+
+% --- 
+% Espaçamentos entre linhas e parágrafos 
+% --- 
+% O tamanho do parágrafo é dado por:
+\setlength{\parindent}{1.3cm}
+
+% Controle do espaçamento entre um parágrafo e outro:
+\setlength{\parskip}{0.2cm}  % tente também \onelineskip
+
+%#% you can change the language used (brazil) by set and uncomment the
+%#% following command:
+% \setdefaultlanguage{english}
+
+% #% Options for the \setdefaultlanguage{} can be found at 
+% #% http://mirrors.ctan.org/macros/latex/contrib/polyglossia/polyglossia.pdf#page=5
+
+% ---
+% ---
+% compila o indice
+% ---
+\makeindex
+% ---
+\begin{document}
+
+%\input{0-pre-textuais/corpo.tex}
+
+% ---
+% ----------------------------------------------------------
+% ELEMENTOS TEXTUAIS
+% ----------------------------------------------------------
+\textual
+
+\input{1-introducao/corpo} % descomentar
+\input{2-fundamentacao-teorica/corpo} % descomentar
+\input{3-notacao-visual-sawsdl/corpo.tex} % descomentar
+\input{4-grasews/corpo} % descomentar
+\input{5-grasews-estudo-de-caso/corpo} % descomentar
+\input{7-conclusao/corpo} % descomentar
+
+\input{9-pos-textuais/corpo.tex}
+
+\end{document}

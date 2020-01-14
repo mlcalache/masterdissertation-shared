@@ -1,0 +1,44 @@
+\section{Resultados}\label{5-estudo-de-caso-resultados}
+
+Neste capítulo demonstramos o uso da ferramenta Grasews para a anotação semântica de uma especificação WSDL. O processo foi inteiramente conduzido por meio das notações visuais providas por Grasews juntamente com a edição colaborativa, envolvendo um desenvolvedor de serviços web e um especialista de domínio.
+
+A utilização da ferramenta facilitou a anotação semântica da especificação WSDL utilizada nesta prova de conceito. Como a especificação WSDL foi criada para o propósito deste estudo de caso, não pudemos comparar os resultados obtidos com outro cenário, onde a especificação já estivesse anotada. O foco desta prova de conceito não foi validar os conceitos ontológicos utilizados na anotação semântica, mas sim validar o processo de anotação semântica auxiliado por notações visuais e pelo trabalho colaborativo por meio da ferramenta Grasews.
+
+Nenhum URI de transformação para os atributos \textit{Lifting Schema Mapping} e \textit{Lowering Schema Mapping} foi utilizado durante o processo de prova de conceito.
+
+A \tablename~\ref{tab:estudo-de-caso-elementos-wsdl-anotados} lista os elementos WSDL/XSD anotados durante a prova de conceito juntamente com os URIs da ontologia \texttt{MovieOntology} utilizados no atributo \textit{Model Reference}. Note que a ontologia \texttt{MovieOntology} utiliza conceitos provindos da ontologia \texttt{dbpedia}.
+
+\begin{table}[ht!]
+    \setlength{\tabcolsep}{10pt} % Default value: 6pt
+    \renewcommand{\arraystretch}{1.5} % Default value: 1
+    \centering
+	\caption[Elementos WSDL/XSD anotados durante a prova de conceito.]{\textbf{Elementos WSDL/XSD anotados durante a prova de conceito.}}
+	\label{tab:estudo-de-caso-elementos-wsdl-anotados}
+	%\resizebox{\textwidth}{!}{
+		\begin{tabular}{| >{\columncolor{Gray}}c | >{\centering\arraybackslash} p{9cm} | }
+			\hline
+            \rowcolor{Gray}
+			\textbf{Elemento WSLD/XSD} & \textbf{URI de \textit{Model Reference}}
+			\\
+			\hline
+			{Movie} & {\url{http://www.movieontology.org/2009/11/09/Movie}}
+			\\
+            \hline
+            {Director} & {\url{http://dbpedia.org/page/Film\_Director}}
+			\\ 
+            \hline
+			{Country} & {\url{http://dbpedia.org/ontology/Country}}
+			\\
+			\hline
+			{Producer} & {\url{http://www.movieontology.org/2009/10/01/movieontology.owl\#Producer}}
+			\\
+			\hline
+			{Actor} & {\url{http://dbpedia.org/ontology/Actor}}
+			\\
+			\hline
+			{Award} & {\url{http://www.movieontology.org/2009/10/01/movieontology.owl\#Award}}
+			\\
+            \hline
+		\end{tabular}
+	%}
+\end{table}

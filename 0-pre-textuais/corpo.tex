@@ -1,0 +1,120 @@
+% ----------------------------------------------------------
+% ELEMENTOS PRÉ-TEXTUAIS
+% ----------------------------------------------------------
+\pretextual
+
+% ---
+% Capa
+% ---
+\imprimircapa %descomentar
+% ---
+
+% ---
+% Folha de rosto
+% (o * indica que haverá a ficha bibliográfica)
+% ---
+\imprimirfolhaderosto %descomentar
+% ---
+
+% ---
+% Inserir a ficha catalográfica
+% ---
+\input{0-pre-textuais/ficha-catalografica.tex} %descomentar
+% ---
+
+% ---
+% Inserir errata
+% ---
+%\input{pre-textuais/errata.tex}
+% ---
+
+% ---
+% Inserir folha de aprovação
+% ---
+\input{0-pre-textuais/folha-aprovacao.tex} %descomentar
+% ---
+
+% ---
+% Dedicatória
+% ---
+\input{0-pre-textuais/dedicatoria.tex} %descomentar
+% ---
+
+% ---
+% Agradecimentos
+% ---
+\input{0-pre-textuais/agradecimentos.tex} %descomentar
+% ---
+
+% ---
+% Epígrafe
+% ---
+%\input{0-pre-textuais/epigrafe.tex}
+% ---
+
+% ---
+% RESUMOS
+% ---
+
+% resumo em português
+% remover se o documento for em inglês
+\input{0-pre-textuais/resumo.tex}  %descomentar
+
+% resumo em inglês
+\input{0-pre-textuais/abstract.tex} %descomentar
+
+% OBS: A numeração de páginas deve sempre começar em páginas ímpares,
+% por isto o uso de \cleardoublepage.
+
+% ---
+% inserir lista de figuras
+% ---
+\pdfbookmark[0]{\listfigurename}{lof}
+\listoffigures*
+\cleardoublepage
+% ---
+
+% ---
+% inserir lista de quadros (opcional)
+% ---
+% \pdfbookmark[0]{\listofquadrosname}{loq}
+% \listofquadros*
+% \cleardoublepage
+% ---
+
+% ---
+% inserir lista de tabelas
+% ---
+\pdfbookmark[0]{\listtablename}{lot}
+\listoftables*
+\cleardoublepage
+% ---
+
+% ---
+% Listagens
+% ---
+\pdfbookmark[0]{\lstlistingname}{lol} % descomentar
+\begin{KeepFromToc}
+    \lstlistoflistings % descomentar
+\end{KeepFromToc}
+\cleardoublepage % descomentar
+% ---
+
+% ---
+% inserir lista de abreviaturas e siglas
+% ---
+\input{0-pre-textuais/lista-siglas.tex}
+% ---
+
+% ---
+% inserir lista de símbolos
+% ---
+%\input{0-pre-textuais/lista-simbolos.tex}
+% ---
+
+% ---
+% inserir o sumario
+% ---
+\pdfbookmark[0]{\contentsname}{toc}
+\tableofcontents*
+\cleardoublepage

@@ -1,0 +1,68 @@
+\subsection{Visão Geral}\label{2-fundamentacao-sistemas-colaborativos-visao-geral}
+
+Uma sociedade muitas vezes é caracterizada pela forma com a qual seus indivíduos se interagem~\cite{ELLIS-GIBBS-REIN-1991-Sistemas-Colaborativos}. O uso de computadores e outros dispositivos eletrônicos de comunicação, presentes tanto em ambientes organizacionais quanto em residenciais, contribuem para o surgimento de novas formas de interação. Uma interação pode ser classificada conforme sua relação com as dimensões do espaço e do tempo. Em relação ao tempo, uma interação pode ser realizada ao mesmo tempo (síncrona) ou em tempos diferentes (assíncrona). Em relação ao espaço, um interação pode ser realizada no mesmo local ou em diferentes locais. A \tablename~\ref{tab:formas-interacao-espaco-tempo} apresenta uma matriz de classificação das formas de interação entre espaço e tempo.
+
+\begin{table}[ht!]
+    \setlength{\tabcolsep}{10pt} % Default value: 6pt
+    \renewcommand{\arraystretch}{1.5} % Default value: 1
+    \centering
+    \caption[Classificação das formas de interação em relação ao tempo e ao espaço.]{\textbf{Classificação das formas de interação em relação ao tempo e ao espaço.} Adaptado de~\cite{ELLIS-GIBBS-REIN-1991-Sistemas-Colaborativos}}.
+    \label{tab:formas-interacao-espaco-tempo}
+	%\resizebox{\textwidth}{!}{
+		\begin{tabular}{ | g | c | c | }
+			\hline
+            \rowcolor{Gray}
+			{} & \textbf{Mesmo tempo} & \textbf{Tempos diferentes}
+			\\
+			\hline
+			\textbf{No mesmo local} & {Interação presencial} & {Interação assíncrona}
+			\\
+			\hline
+			{} & {Interação síncrona} & {Interação assíncrona}
+			\\
+			\multirow{-1.5}{*}[3px]{\textbf{Em locais diferentes}} & {distribuída} & {distribuída}
+			\\
+            \hline
+		\end{tabular}
+	%}
+\end{table}
+
+Uma interação também pode ser classificada conforme os indivíduos presentes na interação (atores). Os atores podem ser tanto seres humanos (usuários) quanto máquinas (computadores e outros dispositivos eletrônicos). Atores podem interagir entre si por meio de diferentes formas. A \tablename~\ref{tab:formas-interacao-atores} apresenta uma matriz de classificação das formas de interação entre diferentes tipos de atores envolvidos.
+
+\begin{table}[h]
+    \setlength{\tabcolsep}{10pt} % Default value: 6pt
+    \renewcommand{\arraystretch}{2} % Default value: 1
+    \centering
+    \caption[Classificação das formas de interação em relação aos atores.]{\textbf{Classificação das formas de interação em relação aos atores.}}
+    \label{tab:formas-interacao-atores}
+    %\resizebox{\textwidth}{!}{
+        \begin{tabular}{ | g | c | c | }
+            \hline
+            \rowcolor{Gray}
+            \textbf{} & \textbf{Usuário} & \textbf{Máquina}
+            \\ \hline
+            \textbf{Usuário} & {Interação usuário-usuário} & {Interação usuário-máquina}
+            \\ \hline
+            \textbf{Máquina} & {Interação usuário-máquina} & {Interação máquina-máquina}
+            \\ \hline
+        \end{tabular}
+    %}
+\end{table}
+
+Interações do tipo usuário-usuário podem ser realizadas entre um grupo de dois ou mais usuários. A interação entre um grupo de usuários contribui para o trabalho em grupo, também chamado de trabalho colaborativo. O trabalho colaborativo tem se tornado cada vez mais essencial em atividades de uma organização~\cite{ELLIS-GIBBS-REIN-1991-Sistemas-Colaborativos}. Contudo, a maioria dos sistemas computacionais suportam interações apenas entre seus usuários e o sistema em si (interações do tipo usuário-máquina). Tarefas comuns como a edição de um documento de texto ou a escrita de um código-fonte de \textit{software} são geralmente realizadas de forma individual, tendo o envolvimento apenas de um único usuário (ser humano) e seu computador (máquina). Mesmo sistemas modelados para serem utilizados por multi-usuários proveem baixo suporte para interações de usuários com usuários (interações do tipo usuário-usuário). Este tipo de suporte é claramente necessário a fim de obter uma maior eficiência na realização de uma tarefa.
+
+%A fim de atender às necessidades de suporte à interações de grupos, deve-se atender à três requisitos: comunicação, colaboração e coordenação.
+%\textbf{Comunicação}
+%\textbf{Colaboração}
+%\textbf{Coordenação}
+%Com o propósito de ser ter uma comunicação e colaboração efetiva, é necessário coordenar atividades realizadas por um grupo.
+
+%\subsection{Trabalho Cooperativo Suportado por Computadores}\label{2-fundamentacao-sistemas-colaborativos-tcsc}
+
+Trabalho Cooperativo Suportado por Computador (TCSC), do inglês \textit{Computer-Supported Cooperative Work} (CSCW), é uma área de estudo da computação. TCSC tem por objetivo investigar formas colaborativas com as quais grupos de trabalho realizam suas tarefas e como dispositivos computacionais podem auxiliar na realização destas tarefas. Sistemas computacionais que suportam a realização de tarefas por um grupo de pessoas com um mesmo objetivo são chamados de \textit{groupware}. Sistemas colaborativos que suportam interações simultâneas são chamados de  \textit{groupwares} de tempo real (\textit{groupwares} síncronos). Enquanto que sistemas colaborativos que suportam interações realizadas de forma não simultânea são chamados de  \textit{groupwares} assíncronos.
+
+%Diversos sistemas computacionais que suportam o trabalho colaborativo estão disponíveis para as mais variadas tarefas, como, por exemplo, a edição colaborativa de documentos de texto ou a edição colaborativa de códigos-fonte de softwares.
+
+Edição colaborativa refere-se à edição de um documento sendo realizada por mais de um usuário~\cite{DILLON-1993-Collaborative-Writing}. A edição colaborativa deve ser realizada com base em objetivo compartilhado entre as pessoas de um grupo. Cada pessoa realiza a sua contribuição individual a fim de atingir o objetivo de forma coletiva. Escolhas efetivas na conscientização, participação e coordenação do grupo são atividades críticas para o sucesso dos resultados obtidos pela escrita colaborativa~\cite{LOWRY-CURTIS-Taxonomy-2004-Collaborative_Writing}.
+
+%\textit{Groupwares} devem prover  uma interface para um ambiente de trabalho compartilhado. Objetivos únicos e ambientes compartilhados são conceitos são cruciais que devem ser providos por \textit{groupwares}, de forma clara e com fácil compreensão pelos seus usuários.

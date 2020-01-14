@@ -1,0 +1,48 @@
+\subsection{Menu \textit{tree-view} WSDL}\label{4-menu-wsdl}
+
+De forma análoga ao grafo WSDL, o menu \textit{tree-view} de uma especificação WSDL também é composto por cinco níveis. Cada nível está diretamente associado ao nível correspondente do grafo WSDL. A \figurename~\ref{fig:menu-tree-view-wsdl} ilustra a estrutura hierárquica de elementos de uma especificação WSDL por meio do menu \textit{tree-view}. Esta estrutura permite identificar as relações de composição entre os diferentes tipos de elementos.
+
+\begin{figure}[h]
+    \resizebox{\textwidth}{!}{
+        \includegraphics[scale=1]{4-grasews/imagens/menu-tree-view-wsdl.png}
+    }
+    \centering
+    \caption[Estrutura da representação visual do menu \textit{tree-view} para uma especificação WSDL]{\textbf{Estrutura da representação visual do menu \textit{tree-view} para uma especificação WSDL.}}
+    \label{fig:menu-tree-view-wsdl}
+\end{figure}
+
+No primeiro nível (nível 1), encontram-se os elementos do tipo \textit{wsdl:interface}. Estes elementos estão representados na cor azul para facilitar a associação com elementos do grafo que representam uma interface, também na cor azul. Adicionalmente, um elemento do tipo \textit{wsdl:interface} possui o prefixo \texttt{[i]} no menu \textit{tree-view}.
+
+No segundo nível (nível 2), encontram-se os elementos do tipo \textit{wsdl:operation}. Estes elementos estão representados na cor ciano para facilitar a associação com elementos do grafo que representam uma operação, também na cor ciano. Adicionalmente, um elemento do tipo \textit{wsdl:operation} possui o prefixo \texttt{[op]} no menu \textit{tree-view}.
+
+No terceiro nível (nível 3), encontram-se os elementos dos tipos \textit{wsdl:input}, \textit{wsdl:output}, \textit{wsdl:infault}, \textit{wsdl:outfault} e, finalmente, \textit{wsdl:fault}. Elementos \textit{wsdl:input} são representados na cor verde para facilitar a associação com elementos do grafo que representam uma mensagem de entrada, também na cor verde. Adicionalmente, um elemento \textit{wsdl:input} possui o prefixo \texttt{[in]} no menu. Elementos \textit{wsdl:output} são representados na cor rosa para facilitar a associação com elementos do grafo que representam uma mensagem de saída, também na cor rosa. Adicionalmente, um elemento \textit{wsdl:input} possui o prefixo \texttt{[out]} no menu. Por fim, elementos relacionados a falhas (exceções) são representados na cor marrom para facilitar a associação com elementos do grafo que representam uma mensagem de falha de entrada (\textit{wsdl:infault}), uma mensagem de falha de saída (\textit{wsdl:outfault}) ou, então, uma falha (\textit{wsdl:fault}), todos na cor marrom. Adicionalmente, um elemento \textit{wsdl:infault} possui o prefixo \texttt{[i-f]}, um elemento \textit{wsdl:outfault} possui o prefixo \texttt{[o-f]} e, finalmente, um elemento \textit{wsdl:fault} possui o prefixo \texttt{[f]}.
+
+No quarto nível (nível 4), encontram-se os elementos do tipo \textit{xs:complexType}. Elementos \textit{xs:complexType} são representados na cor cinza para facilitar a associação com elementos do grafo que representam um tipo complexo, também na cor cinza. Adicionalmente, um elemento \textit{xs:complexType} possui o prefixo \texttt{[c-t]} no menu \textit{tree-view}.
+
+Finalmente, no quinto nível (nível 5), encontram-se os elementos do tipo \textit{xs:simpleType}. Elementos \textit{xs:simpleType} são representados na cor laranja para facilitar a associação com elementos do grafo que representam um tipo simples, também na cor laranja. Adicionalmente, um elemento \textit{xs:simpleType} possui o prefixo \texttt{[s-t]} no menu \textit{tree-view}.
+
+A \figurename~\ref{fig:grasews-menu-tree-view-wsdl} ilustra o menu \textit{tree-view} para uma especificação WSDL aberta na ferramenta Grasews. Inicialmente, ao abrir um documento WSDL na ferramenta, o menu \textit{tree-view} possui apenas o elemento \textit{wsdl:interface} visível. Conforme a navegação pelo menu \textit{tree-view}, o usuário pode descobrir elementos da especificação WSDL. Por meio das setas na lateral direita do menu, o usuário pode visualizar sub-elementos do menu, i.e., visualizar os elementos WSDL/XSD que compõem hierarquicamente uma especificação WSDL.  Uma seta orientada para a direita representa um item de menu que contém sub-itens, porém eles estão fechados, como, por exemplo, o item de menu \texttt{[in] MyMethod}. Uma seta orientada para baixo representa um item de menu que contém sub-itens e eles estão abertos, como, por exemplo os itens de menu \texttt{[i] WebService1Soap}, \texttt{[op] MyMethod}, \texttt{[out] MyMethodResponse}, \texttt{[c-t] MyMethodResponse}, \texttt{[c-t] MyClass} e \texttt{[c-t] MyNestedClass}. Por fim, quando um item de menu não possui sub-itens, não haverá seta para este item, como, por exemplo, todos os itens de menu que representam tipos simples XSD, i.e., todos os elementos com o prefixo \texttt{[s-t]}.
+
+\begin{figure}[h]
+    \includegraphics[scale=0.7]{4-grasews/imagens/grasews-menu-tree-view-wsdl.png}
+    \centering
+    \caption[Menu \textit{tree-view} de Grasews para uma especificação WSDL]{\textbf{Menu \textit{tree-view} de Grasews para uma especificação WSDL.}}
+    \label{fig:grasews-menu-tree-view-wsdl}
+\end{figure}
+
+Grasews permite que múltiplos documentos WSDL sejam abertos simultaneamente, porém, apenas uma especificação WSDL pode ser visualizada no grafo por vez. A \figurename~\ref{fig:grasews-menu-tree-view-wsdl} ilustra os dois ícones utilizados pela ferramenta para indicar qual especificação WSDL está sendo vista ou não no grafo. O ícone com um olho verde indica que a especificação \texttt{GenericWebService2.0} encontra-se visível no grafo para o usuário, enquanto que o ícone com o olho vermelho cortado indica que as especificações \texttt{MovieStoreServiceSimplfied2.0} e \texttt{BookStoreService\_1operation2.0\_simplified} não estão visíveis no grafo para o usuário.
+
+O menu \textit{tree-view} de uma especificação WSDL provê funcionalidades para o processo de anotação semântica. A \figurename~\ref{fig:grasews-menu-tree-view-icones-anotacao} ilustra o menu de contexto e as notações visuais (ícones) que auxiliam na anotação semântica de uma especificação WSDL.
+
+\begin{figure}[h]
+    \includegraphics[scale=0.4]{4-grasews/imagens/grasews-menu-tree-view-icones-anotacao.png}
+    \centering
+    \caption[Menu \textit{tree-view} de Grasews para uma especificação WSDL]{\textbf{Menu \textit{tree-view} de Grasews para uma especificação WSDL.}}
+    \label{fig:grasews-menu-tree-view-icones-anotacao}
+\end{figure}
+
+O menu \textit{tree-view} WSDL utiliza três ícones que indicam com qual atributo da anotação semântica um elemento WSDL/XSD está anotado. Na \figurename~\ref{fig:grasews-menu-tree-view-icones-anotacao}, o ícone com a marca de checagem, na lateral direita do elemento \texttt{[i] BookStoreService}, indica o uso do atributo \textit{Model Reference}. O ícone com a seta para cima, na lateral direita do elemento \texttt{[c-t] GetAllBooksResponse}, indica o uso do atributo \textit{Lifting Schema Mapping}. Finalmente, o ícone com a seta para baixo, também na lateral direita do elemento \texttt{[c-t] GetAllBooksResponse}, indica o uso do atributo \textit{Lowering Schema Mapping}.
+
+Os elementos WSDL/XSD passíveis de anotação semântica segundo o padrão SAWSDL disponibilizam menus de contexto que podem ser acionados por meio do botão direito do \textit{mouse}. A \figurename~\ref{fig:grasews-menu-tree-view-icones-anotacao} ilustra um exemplo de menu de contexto para a anotação semântica. Quando o elemento WSDL/XSD é passível de ser anotado apenas com \textit{Model Reference}, o menu de contexto disponibiliza apenas a funcionalidade de adicionar \textit{Model Reference}. Quando o elemento WSDL/XSD já está anotado com \textit{Model Reference}, o menu de contexto de um elemento WSDL/XSD provê a funcionalidade de remoção da anotação semântica. Note que, como é possível ter múltiplos URIs para \textit{Model Reference}, a funcionalidade de adicionar \textit{Model Reference} continuará disponível para o usuário. Adicionalmente, a funcionalidade de remover \textit{Model Reference} também continuará disponível até que todos os URIs de \textit{Model Reference} sejam removidos do elemento.
+
+Quando um elemento WSDL/XSD também é passível de ser anotado com \textit{Lifting Schema Mapping} e \textit{Lowering Schema Mapping}, o menu de contexto disponibiliza funcionalidades tanto para adicionar um URI para \textit{Lifting Schema Mapping} quanto para adicionar um URI para \textit{Lowering Schema Mapping}. Quando já anotado com \textit{Lifting Schema Mapping}, o menu de contexto de um elemento XSD provê a funcionalidade de remoção da anotação semântica. Note que, como é possível ter apenas um atributo \textit{Lifting Schema Mapping}, a funcionalidade de adicionar \textit{Lifting Schema Mapping} está indisponível para o usuário quando o elemento já está anotado com \textit{Lifting Schema Mapping}. O mesmo se aplica para \textit{Lowering Schema Mapping}.

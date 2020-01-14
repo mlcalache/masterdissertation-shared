@@ -1,0 +1,117 @@
+\definecolor{Gray}{gray}{0.9}
+
+\newcommand{\myhref}[3][red]{\href{#2}{\color{#1}{#3}}}
+\newcommand{\mycite}[2][red]{{\hypersetup{citecolor=#1}\cite{#2}}}
+
+% Pacote para gerar textos Lorem Ipsum
+\usepackage{lipsum}  
+
+% Pacote para exibição de conteúdos na orientação paisagem
+\usepackage{lscape}
+
+% Pacote para uso do highlight \hl command
+\usepackage{soul}
+
+% Pacote para usar duas figuras e duas captions juntas
+\usepackage{subcaption}
+
+% Pacote para as legendas ficarem em negrito
+\usepackage[labelfont=bf]{caption}
+
+% Pacote para blocos coloridos
+\usepackage{tcolorbox}
+
+% Pacote para tabs spaces
+\usepackage{tabto}
+
+% Pacotes para desenhar grafos gerados pelo http://vowl.visualdataweb.org/webvowl.html
+%\usepackage{tikz} 
+%\usepackage{helvet} 
+%\usetikzlibrary{decorations.markings,decorations.shapes,decorations,arrows,automata,backgrounds,petri,shapes.geometric} 
+%\usepackage{xcolor} 
+
+%\usepackage[htt]{hyphenat}
+
+% Pacote para quebrar URLs
+\usepackage{xurl}
+
+% If you are using the default LaTeX fonts (or a small number of others), you can enable hyphenation within \texttt using the hyphenat package:
+\usepackage[htt]{hyphenat}
+
+\renewcommand{\texttt}[1]{%
+  \begingroup
+  \ttfamily
+  \begingroup\lccode`~=`/\lowercase{\endgroup\def~}{/\discretionary{}{}{}}%
+  \begingroup\lccode`~=`[\lowercase{\endgroup\def~}{[\discretionary{}{}{}}%
+  \begingroup\lccode`~=`.\lowercase{\endgroup\def~}{.\discretionary{}{}{}}%
+  \catcode`/=\active\catcode`[=\active\catcode`.=\active
+  \scantokens{#1\noexpand}%
+  \endgroup
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% TABELAS %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% pacote e comando para criar uma tabela com colunas centralizadas e com tamanho fixo
+% o comando 'x' deve ser utilizado
+% exemplo: 
+%\begin{table}[h]
+%    \begin{tabular}{ | x{2cm} | x{5cm} | }
+%        \hline  
+%        \textbf{a} & \textbf{b}
+%        \\ \hline
+%    \end{tabular}
+%\end{table}
+\usepackage{array}
+\newcolumntype{x}[1]{>{\centering\arraybackslash\hspace{0pt}}p{#1}}
+
+\usepackage{multirow}
+\usepackage{colortbl}
+\newcolumntype{g}{>{\columncolor{Gray}}c}
+\definecolor{Gray}{gray}{0.9}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% LISTAGENS %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\tiny,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2
+}
+
+\usepackage{chngcntr}
+
+\renewcommand{\lstlistingname}{Listagem}% Muda o texto de Listing para Listagem
+
+\makeatletter
+\AtBeginDocument{
+    \renewcommand\lstlistoflistings{
+        \bgroup \let\contentsname\lstlistlistingname \def\l@lstlisting##1##2{\@dottedtocline{1}{0em}{3em}{Listagem ##1}{##2}} \let\lst@temp\@starttoc \def\@starttoc##1{\lst@temp{lol}}
+        \tableofcontents \egroup} 
+} \makeatother
+%\renewcommand{\lstlistlistingname}{Lista de \lstlistingname s}% List of Listings -> List of Códigos
+
+\newlistentry{listagem}{lol}{0}
+
+\lstset{style=mystyle}
+
+\lstset{numberbychapter=false}

@@ -1,0 +1,83 @@
+\subsection{Avaliação Ferramental}\label{2-fundamentacao-ferramentas-avaliacao}
+
+%As ferramentas Radiant, Iridescent e EasyWSDL/EasySAWSDL foram avaliadas segundo suas disponibilidades e suas usabilidades. A seguir são apresentadas características relevantes que nos auxiliaram durante esta avaliação.
+
+%Radiant apresenta problemas quanto à sua disponibilidade. A distribuição de Radiant é realizada por meio de um plugin. A dependência do Eclipse para a sua utilização dificulta a sua adoção. O usuário deve ter um conhecimento prévio acerca da utilização do Eclipse. A configuração (instalação) do Eclipse e de Radiant no Eclipse são passos a mais que o usuário também deve realizar antes de iniciar o uso da ferramenta, o que pode contribuir para que a curva de aprendizagem de Radiant seja grande, i.e., iniciar o uso de Radiant pode requisitar um tempo adicional e não esperado. Adicionalmente, as distribuições de Radiant atualmente encontradas na Internet não são compatíveis com as versões mais recentes do Eclipse.
+
+%Iridescent apresenta uma maior disponibilidade, visto que é uma ferramenta disponibilizada no formato \textit{standalone}. Tal formato não exige que seus usuários tenham um conhecimento prévio de outras ferramentas e tão pouco que dependam de outras distribuições. Neste sentido, a curva de aprendizagem de Iridescent é menor quando comparada com Radiant. Iridescent também apresentou erros (exceções não tratadas) durante o seu uso, o que impossibilitou sua utilização de forma fluente.
+
+%Tanto Radiant quanto Iridescent requerem conhecimento técnico de XML/WSDL para que a anotação semântica possa ser realizada pelo usuário. Ambas ferramentas pressupõem que anotações semânticas devam ser inseridas diretamente no documento WSDL, mesmo que sejam facilitadas por meio de representações visuais dos elementos WSDL e dos elementos OWL e por recursos como \textit{drag-and-drop}.
+
+%EasyWSDL e sua extensão EasySAWSDL foram facilmente encontradas. Por se tratar de uma biblioteca associada a uma linguagem de programação específica, esta solução possui usabilidade e aplicabilidade restritas.
+
+%Por se tratar de uma biblioteca de desenvolvimento, EasyWSDL e EasySAWSDL também não exigem conhecimento prévio de outras ferramentas e integrações. Porém, exigem conhecimento de programação e da linguagem \textit{Java}, o que pode ser um grande desmotivador e fator bloqueante para o seu uso. Neste sentido, a biblioteca apresenta uma curva de aprendizagem maior que Radiant e Iridescent.
+
+%A Tabela \ref{tab:formatos-distribuicao-ferramentas-disponiveis} resume os formatos de distribuição para as ferramentas apresentadas e avaliadas neste trabalho. A primeira coluna lista as ferramentas apresentadas neste trabalho. Já a segunda coluna lista os formatos de distribuição de cada ferramenta, conforme a primeira coluna.
+
+%\begin{table}[h]
+%    \setlength{\tabcolsep}{10pt} % Default value: 6pt
+%    \renewcommand{\arraystretch}{2} % Default value: 1
+%    \centering
+%    \caption{Formatos de distribuição das ferramentas disponíveis.}
+%    \label{tab:formatos-distribuicao-ferramentas-disponiveis}
+%    \begin{tabular}{ | p{5cm} | p{7cm} | }
+%        \hline  
+%        \textbf{Ferramenta} & \textbf{Formato de Distribuição}
+%        \\
+%        \hline
+%        {Radiant} & \textit{plugin}
+%        \\
+%        \hline
+%        {Iridescent} & \textit{standalone}
+%        \\
+%        \hline
+%        {EasyWSDL/EasySAWSDL} & {biblioteca de desenvolvimento (API)}
+%        \\
+%        \hline
+%    \end{tabular}
+%\end{table}
+
+As ferramentas Radiant, Iridescent e EasyWSDL \& EasySAWSDL foram avaliadas segundo três critérios de usabilidade: i) facilidade de aprendizado, ii) maximização da produtividade e iii) minimização da taxa de erros. Facilidade de aprendizado refere-se ao esforço (tempo) necessário para aprender a utilizar a ferramenta e, portanto, atingir os resultados esperados. Quanto maior a facilidade de aprendizado, menor é a curva de aprendizagem. Maximização da produtividade refere-se à eficiência com a qual as ferramentas conseguem auxiliar seus usuários a atingirem os resultados esperados. Quanto maior a maximização da produtividade, maior é a eficiência. Finalmente, minimização da taxa de erros refere-se à facilidade com a qual exceções e fluxos não esperados executados por seus usuários. Quanto maior a minimização da taxa de erros, menor é a presença de erros.
+
+Para realizar esta avaliação, utilizamos as três ferramentas para reproduzir parcialmente um conjunto de anotações semânticas desenvolvidas para diferentes serviços web na área de expressão gênica~\cite{GUARDIA-FARIAS-2017-SemantiSCo}. Cada diferente critério de usabilidade foi avaliado segundo uma classificação envolvendo níveis alto, médio e baixo.
+
+No critério de facilidade de aprendizado, o \textit{plugin} Radiant foi avaliado em nível médio em razão da dificuldade associada à instalação e à configuração deste \textit{plugin}. Já a ferramenta Iridescent foi avaliada em nível alto neste critério por se tratar de uma ferramenta \textit{standalone} e, consequentemente, por não possuir dependências de outras ferramentas. Adicionalmente, Iridescent possui uma interface gráfica mais intuitiva quando comparado ao \textit{plugin} Radiant. Com isso, esta ferramenta apresentou uma maior facilidade de aprendizado em relação às demais. Finalmente, EasyWSDL \& EasySAWSDL foram avaliadas em nível baixo no critério de facilidade de aprendizado,
+por se tratar de uma biblioteca de programação e, portanto, dependerem de conhecimento técnico prévio na linguagem de programação utilizada (Java).
+
+Em relação ao critério de maximização da produtividade, as ferramentas Radiant e Iridescent foram avaliadas em nível médio, dado que, uma vez disponíveis, estas ferramentas permitiram a anotação semântica de forma simples. Entretanto, as anotações produzidas não são claramente percebidas dado que o usuário necessita visualizar a própria especificação WSDL para ter total compreensão das ações (anotações) realizadas. A biblioteca EasyWSDL \& EasySAWSDL foi avaliada em nível baixo, dada a necessidade de se criar um programa para permitir a anotação semântica de uma dada especificação WSDL.
+
+%haja vista a sua interface gráfica não muito intuitiva 
+%, devido à quantidade de passos e instruções necessárias para criar-se anotações semânticas em um documento WSDL.
+
+Por fim, em relação ao critério de minimização da taxa de erros, Radiant e EasyWSDL \& EasySAWSDL não apresentaram erros durante sua utilização, portanto, sendo classificados em nível alto. Entretanto, Iridescent apresentou algumas falhas não tratadas ou pouco explicadas ao usuário, consequentemente, obtendo uma avaliação de nível médio.
+
+A \tablename~\ref{tab:avaliacao-ferramentas-disponiveis} resume os critérios de usabilidade avaliados para cada ferramenta.
+
+\begin{table}[ht!]
+    \setlength{\tabcolsep}{10pt} % Default value: 6pt
+    \renewcommand{\arraystretch}{1.5} % Default value: 1
+    \centering
+	\caption[Avaliação de usabilidade para as ferramentas disponíveis.]{\textbf{Avaliação de usabilidade para as ferramentas disponíveis.}}
+	\label{tab:avaliacao-ferramentas-disponiveis}
+	%\resizebox{\textwidth}{!}{
+		\begin{tabular}{| >{\columncolor{Gray}}c | c | c | c | }
+			\hline
+            \rowcolor{Gray}
+			{} & \textbf{Facilidade de} & \textbf{Maximização da} & \textbf{Minimização da}
+			\\
+            \rowcolor{Gray}
+			\multirow{-1.5}{*}[3px]{\textbf{Ferramenta}} & \textbf{aprendizado} & \textbf{produtividade} & \textbf{taxa de erros}
+			\\
+			\hline
+			\textbf{Radiant} & {Médio} & {Médio} & \textcolor{blue}{Alto}
+			\\
+            \hline
+			\textbf{Iridescent} & \textcolor{blue}{Alto} & {Médio} & {Médio}
+			\\ 
+            \hline
+			\textbf{EasySAWSDL} & \textcolor{red}{Baixo} & \textcolor{red}{Baixo} & \textcolor{blue}{Alto}
+			\\
+            \hline
+		\end{tabular}
+	%}
+\end{table}
